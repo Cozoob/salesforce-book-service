@@ -1,2 +1,8 @@
-/IlluminatedCloud        # Illuminated Cloud
-.idea/                   # IntelliJ IDEA (Illuminated Cloud)
+# Illuminated Cloud
+IlluminatedCloud
+
+# IntelliJ IDEA (Illuminated Cloud)
+.idea/
+*.iml
+out
+gen
