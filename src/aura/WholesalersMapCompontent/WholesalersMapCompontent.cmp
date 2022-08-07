@@ -1,0 +1,25 @@
+<!--
+ - Created by mkozub on 22.07.2022.
+ -->
+
+<aura:component description="WholesalersMapCompontent"  implements="flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId"
+                access="global" controller="WholesalersAccountController"
+                >
+    <!-- attributes -->
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="markersTitle" type="String" />
+    <aura:attribute name="selectedMarkerValue" type="String" default="France1" />
+    <aura:attribute name="recordId" type="String" />
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <div>Selected Marker Value is {!v.selectedMarkerValue}</div>
+
+    <!-- the map component -->
+    <lightning:map
+            mapMarkers="{! v.mapMarkers }"
+            markersTitle="{!v.markersTitle}"
+            selectedMarkerValue="{!v.selectedMarkerValue}"
+            onmarkerselect="{!c.handleMarkerSelect}" />
+</aura:component>

@@ -1,0 +1,31 @@
+<!--
+ - Created by mkozub on 22.07.2022.
+ -->
+
+<!-- Book Searcher -->
+<template>
+    <lightning-card >
+        <c-custom-look-up icon-name="standard:user"
+                             s-object-api-name={productApiName}
+                             label="Book searcher"
+                          onlookupupdate={handleSelectedBook}
+                             default-record-id='0052y000001PmqDAAS'
+                             placeholder="type here..."
+        ></c-custom-look-up>
+
+        <template if:true={isDatatableShown}>
+            <lightning-datatable key-field="dt-orders-id"
+                                 columns={columns}
+                                 data={orders}
+                                 onrowaction={handleOnRowAction}
+                                 show-row-number-column="true"
+                                 hide-checkbox-column="true"
+                                 onsort={updateColumnSorting}
+                                 sorted-direction={sortDirection}
+                                 sorted-by={sortBy}
+            >
+            </lightning-datatable>
+        </template>
+
+    </lightning-card>
+</template>
